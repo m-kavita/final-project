@@ -2,21 +2,9 @@ import { ReactComponent as YourSvg } from './assets/logo.svg';
 import { ReactComponent as HomeSvg } from './assets/home.svg';
 import { ReactComponent as AboutSvg } from './assets/about.svg';
 import { ReactComponent as ContactSvg } from './assets/contact.svg';
-import React, {useState} from 'react';
+import React from 'react';
 
 function Navbar() {
-
-    {/*
-    const burger = document.querySelector('#burger');
-    const menu = document.querySelector('#menu');
-
-    burger.addEventListener('click', (e) => {
-        if (menu.classList.contains('hidden')) {
-            menu.classList.remove('hidden');
-        } else {
-            menu.classList.add('hidden');
-        }
-    }); */}
 
     return(
         <div>
@@ -38,7 +26,7 @@ function Navbar() {
                     <div className='border-t border-b border-gray-100 py-2'>
                         <li className='text-grey-700 font-bold'>
                             <HomeSvg className='w-5 inline-block' />
-                            <a href='#' className='px-4 flex justify-center'>
+                            <a href='http://www.google.com' className='px-4 flex justify-center'>
                                 <span>Home</span>
                             </a>
                         </li>
@@ -47,7 +35,7 @@ function Navbar() {
                     <div className='border-t border-b border-gray-100 py-2'>
                         <li className='text-grey-700 font-bold'>
                             <AboutSvg className='w-10 inline-block' />
-                            <a href='#' className='px-4 flex justify-center '>
+                            <a href='http://www.google.com' className='px-4 flex justify-center '>
                                 <span>About</span>
                             </a>
                         </li>
@@ -56,7 +44,7 @@ function Navbar() {
                     <div className='border-t border-b border-gray-100 py-2'>
                         <li className='text-grey-700 font-bold'>
                             <ContactSvg className='w-5 inline-block' />
-                                <a href='#' className='px-4 flex justify-center'>
+                                <a href='http://www.google.com' className='px-4 flex justify-center'>
                                     <span>Contact</span>
                                 </a>
                         </li>
