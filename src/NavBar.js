@@ -1,6 +1,7 @@
 import { ReactComponent as HomeSvg } from './assets/home.svg';
 import { ReactComponent as AboutSvg } from './assets/about.svg';
 import { ReactComponent as ContactSvg } from './assets/contact.svg';
+import { ReactComponent as MenuSvg } from './assets/menu.svg';
 import React from 'react';
 import { Anchor } from 'antd';
 
@@ -37,7 +38,7 @@ function Navbar() {
 
                         <div className='border-t border-b border-gray-100 py-2'>
                             <li className='text-grey-700 font-bold'>
-                                <AboutSvg className='w-10 inline-block' />
+                                <AboutSvg className='w-6 inline-block' />
                                 <a href='http://www.google.com' className='px-4 flex justify-center' target='_blank' rel="noreferrer">
                                     <span>About</span>
                                 </a>
@@ -48,7 +49,7 @@ function Navbar() {
                         <div className='border-t border-b border-gray-100 py-2'>
                             <li className='text-grey-700 font-bold'>
                                 
-                                <AboutSvg className='w-10 inline-block' />
+                                <MenuSvg className='w-10 inline-block' />
                                 <div className='px-4 flex justify-center '>
                                 <Link href="#menulist" title="Menu"/>
                                 </div>

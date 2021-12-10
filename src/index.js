@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './NavBar.js';
-import MainHeader from './MainHeader.js';
 import HomeMenu from './HomeMenu.js';
+import Hero from './Hero.js'
 
 
 ReactDOM.render(
@@ -14,11 +14,10 @@ ReactDOM.render(
         <Navbar />
       </div>
 
-      <div className='bg-gray-100 md:col-span-6'>
-        <MainHeader />
-        <HomeMenu></HomeMenu>
+      <div className='bg-gray-100 md:col-span-6' id='home'>
+        <Hero />
+        <HomeMenu />
       </div>
-
     </div>
   </React.StrictMode>,
   document.getElementById('root')
