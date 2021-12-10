@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './NavBar.js';
-import HomeMenu from './HomeMenu.js';
+import MenuCards from './MenuCards.js';
 import Hero from './Hero.js'
+import BeverageCards from './BeverageCards.js'
 
 
 ReactDOM.render(
@@ -16,7 +17,8 @@ ReactDOM.render(
 
       <div className='bg-gray-100 md:col-span-6' id='home'>
         <Hero />
-        <HomeMenu />
+        <MenuCards />
+        <BeverageCards/>
       </div>
     </div>
   </React.StrictMode>,
