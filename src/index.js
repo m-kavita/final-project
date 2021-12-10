@@ -6,6 +6,7 @@ import Navbar from './NavBar.js';
 import MainHeader from './MainHeader.js';
 import HomeMenu from './HomeMenu.js';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <div className='grid md:grid-cols-7'>
@@ -15,7 +16,7 @@ ReactDOM.render(
 
       <div className='bg-gray-100 md:col-span-6'>
         <MainHeader />
-        <HomeMenu />
+        <HomeMenu></HomeMenu>
       </div>
 
     </div>

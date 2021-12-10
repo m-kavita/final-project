@@ -15,7 +15,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        siteName: ['Rock Salt'],
+        siteName: ['Monoton'],
         body: ['Assistant'],
       }
     },

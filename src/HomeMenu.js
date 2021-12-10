@@ -2,8 +2,8 @@ import menu1 from './assets/menu1.jpg'
 
 function HomeMenu(){
     return(
-        <div className='text-gray-600 px-16 pb-6 font-body'>
-            <h4 className='font-bold mt-12 pb-2 border-b border-gray-200'>Latest Recipes</h4>
+        <div id='menulist' className='text-gray-600 px-16 pb-6 font-body'>
+            <h4 className='font-bold mt-12 pb-2 border-b border-gray-200'>Our Menu</h4>
 
             {/* card grid #1 */}
             <div className='mt-8 grid lg:grid-cols-4 gap-7'>
@@ -116,17 +116,6 @@ function HomeMenu(){
                     </div>
                 </div>
             </div>
-
-            <h4 className='font-bold mt-12 pb-2 border-b border-gray-200'>Most Popular</h4>
-
-            {/* card grid #2 */}
-            <div className='mt-8'>
-                {/* will add duplicates from the first */}
-            </div>
-            <div className='flex justify-center'>
-                <div className='btn bg-secondary-100 text-secondary-200 hover:shadow-sm transform hover:scale-105 hover:bg-opacity-50 transition ease-out duration-200'>Load More</div>
-            </div>
-
         </div>
     )
 }

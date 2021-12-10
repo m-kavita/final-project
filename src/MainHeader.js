@@ -2,7 +2,7 @@ import interiors from './assets/interiors.jpg'
 
 function MainHeader(){
     return(
-        <div className='card-header'>
+        <div id='home' className='card-header'>
                     <img src={interiors} className='w-full h-screen object-cover' alt='interiors' />
                     <div className='m-4'>
                         <div className='flex justify-center md:justify-end signup-badge text-gray-600 px-7 pt-3 font-body sticky right-0 ml-2 mt-2'>
