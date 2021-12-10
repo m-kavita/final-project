@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Navbar from './NavBar.js';
+import MainHeader from './MainHeader.js';
+import HomeMenu from './HomeMenu.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className='grid md:grid-cols-7'>
+      <div className='md:col-span-1'>
+        <Navbar />
+      </div>
+
+      <div className='bg-gray-100 md:col-span-6'>
+        <MainHeader />
+        <HomeMenu />
+      </div>
+
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
