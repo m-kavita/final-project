@@ -8,8 +8,16 @@
     @apply bg-white rounded overflow-hidden shadow-md relative;
 }
 
+.card-header{
+    @apply bg-transparent overflow-hidden relative;
+}
+
 .badge{
     @apply bg-secondary-100 text-secondary-200 text-xs uppercase font-semibold rounded-full p-2 absolute top-0 ml-2 mt-2;
+}
+
+.signup-badge{
+    @apply absolute top-0 ml-2 mt-2
 }
 
 .btn{

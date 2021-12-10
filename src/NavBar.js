@@ -6,6 +6,7 @@ import React, {useState} from 'react';
 
 function Navbar() {
 
+    {/*
     const burger = document.querySelector('#burger');
     const menu = document.querySelector('#menu');
 
@@ -15,7 +16,7 @@ function Navbar() {
         } else {
             menu.classList.add('hidden');
         }
-    });
+    }); */}
 
     return(
         <div>
