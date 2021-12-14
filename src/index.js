@@ -1,26 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
-import Navbar from './NavBar.js';
-import MenuCards from './MenuCards.js';
-import Hero from './Hero.js'
-import BeverageCards from './BeverageCards.js'
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className='grid md:grid-cols-7'>
-      <div className='md:col-span-1'>
-        <Navbar />
-      </div>
-
-      <div className='bg-gray-100 md:col-span-6' id='home'>
-        <Hero />
-        <MenuCards />
-        <BeverageCards/>
-      </div>
-    </div>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
