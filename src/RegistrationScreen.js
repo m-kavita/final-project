@@ -146,19 +146,50 @@ function RegistrationScreen() {
                             }} id="phone" type="phone" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" />
                         </div>
 
-                         <div>
+                        <div>
                             <label>Upload your profile picture</label>
-            <input ref={(element)=>{ avatarInput = element}} 
-            onChange={attachFile}
-            className="field form-control" id="photo" name="file" 
-            type="file" multiple="multiple"/>
-
+                            <input ref={(element)=>{avatarInput = element}} 
+                            onChange={attachFile}
+                            className="field form-control" id="photo" name="file" 
+                            type="file" multiple="multiple"/>
                         </div>
                     </div>
 
+                    {formState !== "loading" &&
                     <div class="flex justify-end mt-6">
-                        <button class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+                        <button onClick={registerUser} class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Submit</button>
                     </div>
+                    }
+
+                    {formState === "validationFailed" &&
+                        <div className="alert alert-danger">
+
+                            <ul>
+                                {errorsState.map(
+                                    (error) => {
+                                        return <li>{error}</li>
+                                    }
+                                )}
+                            </ul>
+
+                        </div>
+                    }
+
+                    {formState === "successful" &&
+                        <div className="alert alert-success">
+                            You have a successfully created an account
+                        </div>
+                    }
+
+                    {formState === "unsuccessful" &&
+                        <div className="alert alert-danger">
+                            An error occured. Please try again.
+                        </div>
+                    }
+
+                    {formState === "loading" &&
+                        <p>Loading...</p>
+                    }
                 </form>
             </section>
         </div>

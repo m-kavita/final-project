@@ -1,22 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import React from 'react';
 
 function SignUp(props) {
-
-    const [state, setState] = useState({})
-
-    useEffect(
-        function() {
-            setState(
-                {
-                    ...{}, 
-                    [props.path]: 'active'
-                }
-            )
-        },
-        [props.path]
-    )
 
     return(
         <div className='m-4'>
