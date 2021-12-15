@@ -14,7 +14,7 @@ function App() {
                 <LayoutRoute path='/about' exact={true} component={AboutScreen} />
                 <LayoutRoute path='/contact' exact={true} component={ContactScreen} />
                 <LayoutRoute path='/menucards' exact={true} component={MenuScreen} />
-                <LayoutRoute path='/registration' exact={true} component={RegistrationScreen} />
+                <LayoutRoute path='/registrationscreen' exact={true} component={RegistrationScreen} />
             </Switch>
         </BrowserRouter>
     )

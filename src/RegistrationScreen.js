@@ -10,22 +10,14 @@ function RegistrationScreen() {
     let emailField;
     let passwordField;
     let phoneField;
-    let checkBox;
+    let addressField;
     let avatarInput;
 
-    // FormData is a constructor for creating an object
-    // that works like an HTML form element
     const formData = new FormData();
-
-    // errorsState is for tracking the validation errors
     const [errorsState, setErrorsState] = useState([]);
-
-    // attachFile() will append to formData the avatar file
     const attachFile = (evt) => {
-        // Create an array from the file attachments
         const files = Array.from(evt.target.files);
 
-        // For each attachment, append the file to formData
         files.forEach(
             (fileAttachment, index) => {
                 formData.append(index, fileAttachment);
@@ -37,7 +29,6 @@ function RegistrationScreen() {
 
         const errors = [];
         
-        // 1. Validate all of the required fields
         if( firstNameField.value.length === 0 ) {
             errors.push("Please enter your first name");
         }
@@ -50,17 +41,15 @@ function RegistrationScreen() {
         if( passwordField.value.length === 0 ) {
             errors.push("Please enter valid password");
         }
-        if( checkBox.checked === false ) {
-            errors.push("Please accept the terms & conditions");
+        if( addressField.value.length === 0 ) {
+            errors.push("Please enter valid address");
         }
 
-        // 1.1 If there are errors, set the state to "validationFailed"
         if(errors.length > 0) {
             setFormState("validationFailed");
             setErrorsState(errors);
         }
 
-        // 1.2 If there are no errors, set the state to "loading"
         else {
             setFormState("loading");
             setErrorsState([]);
@@ -69,6 +58,7 @@ function RegistrationScreen() {
             formData.append('firstName', firstNameField.value);
             formData.append('lastName', lastNameField.value);
             formData.append('email', emailField.value);
+            formData.append('email', addressField.value);
             formData.append('password', passwordField.value);
             formData.append('phoneNumber', phoneField.value);
 
@@ -79,11 +69,9 @@ function RegistrationScreen() {
                     body: formData
                 }
             )
-            // The .json() method will convert a 'stringified' object to a JavaScript object
             .then(
                 (backendResponseJson) => backendResponseJson.json()
             )
-             // 2.1 If the submission is successful, set state to "successful"
             .then(
                 (backendResponse) => {
                     console.log(backendResponse.status);
@@ -94,7 +82,6 @@ function RegistrationScreen() {
                     }
                 }
             )
-            // 2.2 If the submission is successful, set state to "unsucessful"
             .catch(
                 (err) => {
                     console.log(err);
@@ -104,119 +91,76 @@ function RegistrationScreen() {
         }
     }
 
-    // errorState 
     return (
-        <div className="container" style={{"margin-top": "5em", "max-width": "40em"}}>
-            
-            <h1>Register your Interest</h1>
-            <br/>
+        <div class='mt-4 pt-20 h-screen'>
+            <section class="max-w-4xl p-6 mx-auto bg-primary-200 rounded-md shadow-md dark:bg-gray-800 font-body">
+                <h2 class="text-lg font-siteName text-white text-5xl uppercase dark:text-white tracking-wide">Sign up</h2>
+                
+                <form>
+                    <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+                        <div>
+                            <label class="text-gray-700 dark:text-gray-200" for="firstName">First Name</label>
+                            <input ref={
+                                function(theInputElement) {
+                                    firstNameField = theInputElement;
+                            }} id="firstName" type="firstName" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" />
+                        </div>
 
-            <label>Enter your firstname *</label>
-            <input ref={
-                function(theInputElement) {
-                    firstNameField = theInputElement;
-                }
-            } className="field form-control" name="firstName" type="text" />
+                        <div>
+                            <label class="text-gray-700 dark:text-gray-200" for="lastName">Last Name</label>
+                            <input ref={
+                                function(thisInputField) {
+                                    lastNameField = thisInputField;
+                            }} id="lastName" type="lastName" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" />
+                        </div>
 
-            <label>Enter your lastname *</label>
-            <input 
-            ref={
-                function(thisInputField) {
-                    lastNameField = thisInputField;
-                }
-            } 
-            className="field form-control" name="lastName" type="text" />
+                        <div>
+                            <label class="text-gray-700 dark:text-gray-200" for="email">Email</label>
+                            <input ref={
+                                function(thisInputField) {
+                                    emailField = thisInputField
+                            }} id="email" type="email" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" />
+                        </div>
 
-            <label>Enter your email *</label>
-            <input ref={
-                function(thisInputField) {
-                    emailField = thisInputField
-                }
-            }
-            className="field form-control" name="email" type="text" />
+                        <div>
+                            <label class="text-gray-700 dark:text-gray-200" for="address">Address</label>
+                            <input ref={
+                                function(thisInputField) {
+                                    addressField = thisInputField
+                            }} id="address" type="address" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" />
+                        </div>
 
-            <label>Enter a password *</label>
-            <input ref={
-                function(thisInputField) {
-                    passwordField = thisInputField
-                }
-            }
-            className="field form-control" name="password" autocomplete="off" type="password" />
+                        <div>
+                            <label class="text-gray-700 dark:text-gray-200" for="password">Password</label>
+                            <input ref={
+                                function(thisInputField) {
+                                    passwordField = thisInputField
+                            }} id="password" type="password" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" />
+                        </div>
 
-            <label>Enter your phone (optional)</label>
-            <input ref={
-                function(thisInputField) {
-                    phoneField = thisInputField
-                }
-            }
-            className="field form-control" name="phone" type="text" />
+                        <div>
+                            <label class="text-gray-700 dark:text-gray-200" for="phone">Phone (optional)</label>
+                            <input ref={
+                                function(thisInputField) {
+                                    phoneField = thisInputField
+                            }} id="phone" type="phone" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" />
+                        </div>
 
-            <br/><br/>
-
-            <label>Upload your profile picture</label>
+                         <div>
+                            <label>Upload your profile picture</label>
             <input ref={(element)=>{ avatarInput = element}} 
             onChange={attachFile}
             className="field form-control" id="photo" name="file" 
             type="file" multiple="multiple"/>
 
-            <br/><br/>
+                        </div>
+                    </div>
 
-            <label>Do you agree to terms &amp; conditions? *</label>
-            <input ref={
-                function(thisCheckbox) {
-                    checkBox = thisCheckbox;
-                }
-            }
-            className="checkbox" name="termsConditions" type="checkbox" /> Yes
-
-            <br/><br/>
-
-
-            {
-                formState !== "loading" &&
-                <div>
-                    <button 
-                    onClick={registerUser}
-                    className="btn btn-primary"
-                    style={{"padding": "10px", "font-size": "16px"}}>
-                        Submit
-                    </button><br/><br/>
-                </div>
-            }
-
-            {
-                formState === "validationFailed" &&
-                <div className="alert alert-danger">
-
-                    <ul>
-                        {
-                            errorsState.map(
-                                (error) => {
-                                    return <li>{error}</li>
-                                }
-                            )
-                        }
-                    </ul>
-
-                </div>
-            }
-
-            {
-                formState === "successful" &&
-                <div className="alert alert-success">You have a successfully created an account</div>
-            }
-
-            {
-                formState === "unsuccessful" &&
-                <div className="alert alert-danger">An error occured. Please try again.</div>
-            }
-
-            {
-                formState === "loading" &&
-                <p>Loading...</p>
-            }
-
-
+                    <div class="flex justify-end mt-6">
+                        <button class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+                    </div>
+                </form>
+            </section>
         </div>
     )
 }
