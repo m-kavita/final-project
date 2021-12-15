@@ -1,19 +1,30 @@
-import imgcontact from './assets/imgcontact.jpg';
-
 function ContactScreen(){
     return(
-        <div className='card-header'>
-            <img src={imgcontact} className='w-screen h-screen object-cover' alt='imginteriors'/>
-            <div className='items-center justify-center grid md:grid-cols-6'>
-                <div className='md:col-span-1'>
-                </div>
-                <div className='md:col-span-4'>
-                    <div className='bg-red-700 text-secondary-200 text-xs uppercase font-semibold rounded-full p-2'>
-                        <svg className="w-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span className='cursor-pointer'>Add to Cart</span>
+        <div>
+            <div className="flex items-center w-full h-screen py-10 bg-cover bg-hero-pattern justify-center">
+                <div className="bg-white opacity-90 rounded overflow-hidden shadow-md relative; lg:card-side">
+                    <div className="w-full card-body inline-block px-10 py-10">
+                        <div>
+                            <h2 className="font-siteName uppercase text-7xl text-center text-primary-200">Contact</h2> 
+                            <h1 className='pt-8 font-body font-semibold text-center text-4xl text-red-700'>Hours & Location</h1>
+                            <p className='text-center font-body pt-5 text-gray-800'>
+                            #15, Ground Floor,<br/>
+                            The Dubai Mall, Financial Center Street<br/>
+                            Downtown Dubai<br/>
+                            (04) 987-6543<br/>
+                            info@kags.com
+                            </p>
+
+                            <h1 className='pt-8 font-body font-semibold text-center text-3xl text-red-700'>Dine In</h1>
+
+                            <p className='text-center font-body pt-5 text-gray-800'>
+                            Monday - Thursday: 5.30 - 9.30 PM <br/>
+                            Saturday & Sunday : 12:30 - 10 PM <br/>
+                            Closed Fridays <br/></p>
+                            <p className='text-center font-body py-5 text-gray-800'> ---------------- <br/></p>
+                            <p className='font-body text-gray-800'>For additional information or inquires, please email info@kags.com.</p>
+                        </div>
                     </div>
-                </div>
-                <div className='md:col-span-1'>
                 </div>
             </div>
         </div>
