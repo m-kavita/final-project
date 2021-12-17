@@ -58,7 +58,7 @@ function RegistrationScreen() {
             formData.append('firstName', firstNameField.value);
             formData.append('lastName', lastNameField.value);
             formData.append('email', emailField.value);
-            formData.append('email', addressField.value);
+            formData.append('address', addressField.value);
             formData.append('password', passwordField.value);
             formData.append('phoneNumber', phoneField.value);
 
@@ -154,8 +154,6 @@ function RegistrationScreen() {
                             type='file' multiple='multiple'/>
                         </div>
 
-                    </div>
-
                         {formState !== 'successful' &&
                             <div className='flex justify-end mt-6'>
                                 <button onClick={registerUser} className='font-body btn ml-2 leading-5 text-white bg-gray-400 border-gray-400 md:border-2 hover:bg-gray-100 hover:border-gray-100 hover:text-gray-400 hover:shadow-sm transition ease-in-out duration-500'>
@@ -164,6 +162,8 @@ function RegistrationScreen() {
                             </div>
                         }
                 </div>
+
+                    </div>
 
                 <div className='pt-10'>
                     {formState === 'validationFailed' &&
