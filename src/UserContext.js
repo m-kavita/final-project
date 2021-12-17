@@ -14,6 +14,7 @@ const initialState = {
     jsonwebtoken: localStorage.getItem('jsonwebtoken') || undefined,
     loggedIn: localStorage.getItem('firstName') ? true :false,
     email: localStorage.getItem('email') || undefined,
+    address: localStorage.getItem('address') || undefined,
     avatar: localStorage.getItem('avatar') || undefined
 }
 
@@ -41,6 +42,7 @@ export const UserContextProvider = ({ children }) => {
             localStorage.setItem('firstName', payload.firstName);
             localStorage.setItem('lastName', payload.lastName);
             localStorage.setItem('email', payload.email);
+            localStorage.setItem('address', payload.address);
             localStorage.setItem('avatar', payload.avatar);
             localStorage.setItem('jsonwebtoken', payload.jsonwebtoken);
 
@@ -63,6 +65,7 @@ export const UserContextProvider = ({ children }) => {
                 loggedIn: state.loggedIn,
                 avatar: state.avatar,
                 email: state.email,
+                address: state.address,
                 updateUser
             }}
         >{children}

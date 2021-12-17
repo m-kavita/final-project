@@ -2,7 +2,7 @@ import imgabout from './assets/imgabout.jpg'
 
 function AboutScreen(){
     return(
-        <div className='bg-gray-100'>
+        <div className='bg-gray-100 transition-opacity duration-500'>
             <div className='card-header'>
                 <img src={imgabout} className='w-screen h-screen object-cover' alt='kitchen'/>
                 <div className="items-center absolute bottom-1/2 md:left-1/4 md:right-1/4 justify-center">
