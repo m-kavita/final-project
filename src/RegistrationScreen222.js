@@ -13,11 +13,19 @@ function RegistrationScreen() {
     let checkBox;
     let avatarInput;
 
+    // FormData is a constructor for creating an object
+    // that works like an HTML form element
     const formData = new FormData();
+
+    // errorsState is for tracking the validation errors
     const [errorsState, setErrorsState] = useState([]);
+
+    // attachFile() will append to formData the avatar file
     const attachFile = (evt) => {
+        // Create an array from the file attachments
         const files = Array.from(evt.target.files);
 
+        // For each attachment, append the file to formData
         files.forEach(
             (fileAttachment, index) => {
                 formData.append(index, fileAttachment);
@@ -29,6 +37,7 @@ function RegistrationScreen() {
 
         const errors = [];
         
+        // 1. Validate all of the required fields
         if( firstNameField.value.length === 0 ) {
             errors.push("Please enter your first name");
         }
@@ -45,11 +54,13 @@ function RegistrationScreen() {
             errors.push("Please accept the terms & conditions");
         }
 
+        // 1.1 If there are errors, set the state to "validationFailed"
         if(errors.length > 0) {
             setFormState("validationFailed");
             setErrorsState(errors);
         }
 
+        // 1.2 If there are no errors, set the state to "loading"
         else {
             setFormState("loading");
             setErrorsState([]);
@@ -68,9 +79,11 @@ function RegistrationScreen() {
                     body: formData
                 }
             )
+            // The .json() method will convert a 'stringified' object to a JavaScript object
             .then(
                 (backendResponseJson) => backendResponseJson.json()
             )
+             // 2.1 If the submission is successful, set state to "successful"
             .then(
                 (backendResponse) => {
                     console.log(backendResponse.status);
@@ -81,6 +94,7 @@ function RegistrationScreen() {
                     }
                 }
             )
+            // 2.2 If the submission is successful, set state to "unsucessful"
             .catch(
                 (err) => {
                     console.log(err);
@@ -90,6 +104,7 @@ function RegistrationScreen() {
         }
     }
 
+    // errorState 
     return (
         <div className="container" style={{"margin-top": "5em", "max-width": "40em"}}>
             

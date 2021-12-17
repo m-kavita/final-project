@@ -4,7 +4,7 @@ import React from 'react';
 function SignUp(props) {
 
     return(
-        <div className='m-4'>
+        <div className='mx-4 mt-4'>
             <div className='flex justify-center md:justify-end signup-badge text-gray-600 px-7 pt-3 font-body sticky right-0 ml-2 mt-2'>
                 <Link to='/registrationscreen' className='btn text-white bg-primary-300 border-primary-300 md:border-2 hover:bg-primary-100 hover:border-primary-100 hover:shadow-sm transition ease-in-out duration-500'>Sign Up
                 </Link>
