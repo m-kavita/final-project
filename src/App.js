@@ -5,6 +5,7 @@ import AboutScreen from './About.js';
 import ContactScreen from './Contact.js';
 import MenuScreen from './MenuCards.js';
 import RegistrationScreen from './RegistrationScreen.js';
+import LoginScreen from './LoginScreen.js'
 
 function App() {
     return(
@@ -15,6 +16,7 @@ function App() {
                 <LayoutRoute path='/contact' exact={true} component={ContactScreen} />
                 <LayoutRoute path='/menucards' exact={true} component={MenuScreen} />
                 <LayoutRoute path='/registrationscreen' exact={true} component={RegistrationScreen} />
+                <LayoutRoute path='/loginscreen' exact={true} component={LoginScreen} />
             </Switch>
         </BrowserRouter>
     )

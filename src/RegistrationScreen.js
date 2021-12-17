@@ -172,7 +172,7 @@ function RegistrationScreen() {
                             <ul>
                                 {errorsState.map(
                                     (error) => {
-                                        return <li v-if="alertOpen" className="text-white px-6 py-3 border-0 rounded-md relative mb-4 bg-red-400">
+                                        return <li v-if="alertOpen" className="text-red-600 px-6 py-3 border-0 rounded-md relative mb-4 bg-red-200">
                                         <span class="inline-block align-middle mr-8">
                                             {error}
                                         </span></li>
@@ -183,7 +183,7 @@ function RegistrationScreen() {
                     }
                     
                     {formState === 'successful' &&
-                        <div v-if="alertOpen" className='text-white px-6 py-3 border-0 rounded relative mb-4 bg-green-600'>
+                        <div v-if="alertOpen" className='text-green-600 px-6 py-3 border-0 rounded relative mb-4 bg-green-200'>
                             <span class='inline-block align-middle mr-8'>
                                 You have a successfully created an account
                             </span>
@@ -191,7 +191,7 @@ function RegistrationScreen() {
                     }
 
                     {formState === 'unsuccessful' &&
-                        <div v-if="alertOpen" className="text-white px-6 py-3 border-0 rounded relative mb-4 bg-red-500">
+                        <div v-if="alertOpen" className="text-red-600 px-6 py-3 border-0 rounded relative mb-4 bg-red-200">
                             <span class="inline-block align-middle mr-8">
                                 An error occured. Please try again.
                             </span>
