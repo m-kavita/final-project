@@ -6,7 +6,7 @@ function AboutScreen(){
             <div className='card-header'>
                 <img src={imgabout} className='w-screen h-screen object-cover' alt='kitchen'/>
                 <div className="items-center absolute bottom-1/2 md:left-1/4 md:right-1/4 justify-center">
-                    <h4 className="mb-3 text-3xl lg:text-8xl font-siteName break-normal text-center uppercase drop-shadow-lg text-primary-300">Our Story</h4>
+                    <h4 className="mb-3 text-3xl lg:text-8xl font-siteName break-normal text-center uppercase drop-shadow-lg text-primary-300">Our&nbsp; Story</h4>
                     <p className="leading-relaxed text-white break-words text-center text-xl mt-4 font-body">Morbi mollis quam at tristique consectetur. Curabitur bibendum eros a libero dignissim, in pellentesque metus finibus. Curabitur tempor ipsum in nisl egestas, vitae blandit neque aliquet.</p>
 
                 </div>

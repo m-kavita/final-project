@@ -17,7 +17,7 @@ function ProfileScreen() {
     }
 
     if (!localStorage.getItem('jsonwebtoken')) {
-        return (<Redirect to="/login" />)
+        return (<Redirect to="/loginscreen" />)
     }
     else {
         return (
