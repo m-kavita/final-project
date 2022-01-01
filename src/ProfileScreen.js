@@ -29,10 +29,10 @@ function ProfileScreen() {
                             <li>{firstName}</li>
                             <li>{lastName}</li>
                             <li>{email}</li>
-                            <li>{avatar}</li>
+                            <li><img src={avatar} width='128' alt={firstName} /></li>
                         </ul>
                     </div>
-                    <button onClick={logout} className="btn btn-danger">Log out</button>
+                    <button onClick={logout} className="btn">Log out</button>
                 </div>  
             </div>
         )

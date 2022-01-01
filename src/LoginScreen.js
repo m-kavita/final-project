@@ -60,17 +60,22 @@ function LoginScreen() {
             .then((backendResponse)=> backendResponse.json())
             .then((theJson)=>{
                 console.log(theJson, theJson.message);
-
-                updateUser(
-                    {
-                        jsonwebtoken: theJson.message.jsonwebtoken,
-                        firstName: theJson.message.firstName,
-                        lastName: theJson.message.lastName,
-                        email: theJson.message.email,
-                        avatar: theJson.message.avatar
-                    }
-                )
-                setState('successful');
+                if(
+                    theJson.status === "ok" 
+                ){
+                    updateUser(
+                        {
+                            jsonwebtoken: theJson.message.jsonwebtoken,
+                            firstName: theJson.message.firstName,
+                            lastName: theJson.message.lastName,
+                            email: theJson.message.email,
+                            avatar: theJson.message.avatar
+                        }
+                    )
+                    setState('successful');
+                } else {
+                    setState('unsuccessful');
+                }
             })
             // 2.2 If the submission is unsuccessful, set the state 'unsuccessful'
             .catch((error)=>{
