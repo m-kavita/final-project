@@ -4,6 +4,7 @@ import { ReactComponent as HomeSvg } from './assets/home.svg';
 import { ReactComponent as AboutSvg } from './assets/about.svg';
 import { ReactComponent as ContactSvg } from './assets/contact.svg';
 import { ReactComponent as MenuSvg } from './assets/menu.svg';
+import { ReactComponent as ProfileSvg } from './assets/profile.svg';
 import React from 'react';
 
 function NavBar(props) {
@@ -70,8 +71,20 @@ function NavBar(props) {
                                 </div>
                             </Link>
                         </li>
+                    </div>
+
+                    { localStorage.getItem('jsonwebtoken') && (
+                        <div className='border-t border-b border-gray-100 py-2'>
+                            <li className='text-gray-400 font-body transform hover:scale-110 transition ease-out duration-200 hover:text-red-700'>
+                                <Link to='/profilescreen' className={`nav-link ${state['/contact']}`}>
+                                    <ProfileSvg className='w-5 inline-block' />
+                                    <div className='px-4 flex justify-center'>
+                                        <span>My Profile</span>
+                                    </div>
+                                </Link>
+                            </li>
                         </div>
-                    
+                    )}
 
                     <div className='border-t border-b border-gray-100 py-2'>
                         <li className='text-gray-400 font-body transform hover:scale-110 transition ease-out duration-200 hover:text-red-700'>
@@ -83,6 +96,7 @@ function NavBar(props) {
                             </Link>
                         </li>
                     </div>
+
                 </ul>
             </div>
         </div>

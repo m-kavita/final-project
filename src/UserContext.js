@@ -14,6 +14,7 @@ const initialState = {
     jsonwebtoken: localStorage.getItem('jsonwebtoken') || undefined,
     loggedIn: localStorage.getItem('firstName') ? true :false,
     email: localStorage.getItem('email') || undefined,
+    phone: localStorage.getItem('phone') || undefined,
     address: localStorage.getItem('address') || undefined,
     avatar: localStorage.getItem('avatar') || undefined
 }
@@ -38,11 +39,13 @@ export const UserContextProvider = ({ children }) => {
     const updateUser = useCallback(
         (payload) => {
 
+            console.log(payload)
             // Set the values in the user's computer
             localStorage.setItem('firstName', payload.firstName);
             localStorage.setItem('lastName', payload.lastName);
             localStorage.setItem('email', payload.email);
             localStorage.setItem('address', payload.address);
+            localStorage.setItem('phone', payload.phone);
             localStorage.setItem('avatar', payload.avatar);
             localStorage.setItem('jsonwebtoken', payload.jsonwebtoken);
 
@@ -61,15 +64,15 @@ export const UserContextProvider = ({ children }) => {
             value={{
                 firstName: state.firstName,
                 lastName: state.lastName,
+                address: state.address,
                 jsonwebtoken: state.jsonwebtoken,
                 loggedIn: state.loggedIn,
                 avatar: state.avatar,
                 email: state.email,
-                address: state.address,
+                phone: state.phone,
                 updateUser
             }}
         >{children}
         </UserContext.Provider>
-
     )
 };

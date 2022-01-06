@@ -60,7 +60,7 @@ function RegistrationScreen() {
             formData.append('email', emailField.value);
             formData.append('address', addressField.value);
             formData.append('password', passwordField.value);
-            formData.append('phoneNumber', phoneField.value);
+            formData.append('phone', phoneField.value);
 
             fetch(
                 `${process.env.REACT_APP_BACKEND}/user/register`,

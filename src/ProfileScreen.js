@@ -5,7 +5,7 @@ import {UserContext} from './UserContext';
 
 function ProfileScreen() {
 
-    const { firstName, lastName, email, avatar, updateUser } = useContext(UserContext);
+    const { firstName, lastName, email, phone, address, avatar, updateUser } = useContext(UserContext);
 
     function logout() {
         updateUser(
@@ -21,18 +21,17 @@ function ProfileScreen() {
     }
     else {
         return (
-            <div>
+            <div className='bg-gray-100 flex items-center w-full h-screen py-10 justify-center'>
                 <div className="container py-5" style={{maxWidth: 600 }}>
-                    <h1>My Profile</h1>
-                    <div>
-                        <ul>
-                            <li>{firstName}</li>
-                            <li>{lastName}</li>
-                            <li>{email}</li>
-                            <li><img src={avatar} width='128' alt={firstName} /></li>
-                        </ul>
+                    <div className="max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                        <img className="object-cover w-full h-60" src={avatar} alt="avatar" />
+                        <div className="p-5 text-center">
+                            <a href="#" className="font-siteName block text-4xl uppercase text-primary-200 dark:text-white pb-2">{firstName}&nbsp;&nbsp;{lastName}</a>
+                            <span className="font-body text-sm text-gray-700 dark:text-gray-200">{email}</span><br/>
+                            <span className="font-body text-sm text-gray-700 dark:text-gray-200">{phone}</span><br/>
+                            <span className="font-body text-sm text-gray-700 dark:text-gray-200">{address}</span>
+                        </div>
                     </div>
-                    <button onClick={logout} className="btn">Log out</button>
                 </div>  
             </div>
         )

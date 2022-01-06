@@ -69,17 +69,22 @@ function LoginScreen() {
                             firstName: theJson.message.firstName,
                             lastName: theJson.message.lastName,
                             email: theJson.message.email,
+                            address: theJson.message.address,
+                            phone: theJson.message.phone,
                             avatar: theJson.message.avatar
                         }
                     )
                     setState('successful');
                 } else {
+                    if( (theJson?.message && theJson?.message === "Wrong email or password") || (theJson?.message && theJson?.message === "Wrong password")) {
+                    setState('validation error')
+                } else {
                     setState('unsuccessful');
+                    }
                 }
             })
             // 2.2 If the submission is unsuccessful, set the state 'unsuccessful'
             .catch((error)=>{
-                console.log(error);
                 setState('unsuccessful');
             });
         }
@@ -109,7 +114,7 @@ function LoginScreen() {
                                         <label for='email' className='block mb-2 text-sm text-neutral-100'>
                                             Email Address
                                         </label>
-                                        <input ref={ (elem)=>emailField = elem } type='email' name='email' id='email' placeholder='givemefood@mail.com' className='w-full px-3 py-2 placeholder-neutral-300 border border-neutral-300 rounded-md focus:outline-none focus:ring focus:ring-red-100 focus:border-primary-300' aria-describedby='emailHelp' />
+                                        <input ref={ (elem)=>emailField = elem }  type='email' name='email' id='email' placeholder='givemefood@mail.com' className='w-full px-3 py-2 placeholder-neutral-300 border border-neutral-300 rounded-md focus:outline-none focus:ring focus:ring-red-100 focus:border-primary-300' aria-describedby='emailHelp' />
                                         <div id='emailHelp' className='block mt-0.5 text-xs text-primary-50'>
                                             We'll never share your email with anyone else.
                                         </div>
