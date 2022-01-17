@@ -11,7 +11,6 @@ function RegistrationScreen() {
     let addressField;
     let passwordField;
     let phoneField;
-    let avatarInput;
 
     const formData = new FormData();
     const [errorsState, setErrorsState] = useState([]);
@@ -157,7 +156,7 @@ function RegistrationScreen() {
 
                                 <div>
                                     <label className='text-white'>Upload your profile picture</label><br/>
-                                    <input ref={(element)=>{avatarInput = element}} 
+                                    <input
                                     onChange={attachFile}
                                     className='field form-control font-body text-white text-sm' id='photo' name='file' 
                                     type='file' multiple='multiple'/>

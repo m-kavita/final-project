@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import LayoutRoute from './LayoutRoute.js';
 import MainScreen from './MainScreen.js';
 import AboutScreen from './About.js';

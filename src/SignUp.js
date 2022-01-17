@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Redirect , Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // Connect to the context (i.e, global state)
 import {UserContext} from './UserContext';
 

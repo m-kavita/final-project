@@ -2,7 +2,6 @@ import { Route } from 'react-router-dom';
 import NavBar from './NavBar.js';
 import SignUp from './SignUp.js';
 import React from 'react';
-import { useState } from 'react';
 
 function LayoutRoute(props) {
     
